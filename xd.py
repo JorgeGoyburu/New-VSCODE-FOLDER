@@ -1,4 +1,3 @@
-
-
-nombre1 = input('Ingrese su nombre: ')
-print("la ultima letra de su nombre es:", nombre1[-1])
+mensaje = "Hola Mundo"
+if mensaje.isalpha():
+    print("El mensaje solo contiene letras.")

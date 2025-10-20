@@ -29,11 +29,20 @@ mensaje = f"{saludo} {nombre_usuario3}, tu proemdio es: {promedio}"
 print(mensaje)
 
 
+
+#####################################################################################################################
+################################# FUNCIONES CON CADENA DE CARACTERES ################################################
+#####################################################################################################################
+
+
+
 cadena = "abcdefg"
 # Comprueba si la subcadena de índice 1 a 4 ("bcd") termina con "cd"
 if cadena.endswith("cd", 0, 4): #si el rango que damos no incluye el final, no se toma en cuenta (se toma como un false)
     print("La subcadena dentro del rango termina con 'cd'")
 # Salida: La subcadena dentro del rango termina con 'cd'
 
-
+palabras = ["Hola", "123", "MUNDO"]
+resultados = [palabra.isalpha() for palabra in palabras]
+print(resultados)  # Imprime: [True, False, True]
 

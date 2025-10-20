@@ -1,3 +1,4 @@
-a = 10 ; b = 10 
-result = a + b
-print('el resultado de la suma de', a, 'con', b, 'es:', result)
+mensaje = ['hola', 'mundo', '123']
+for pene in mensaje:
+    if pene.isalpha():
+        print(f"'{pene}' solo contiene letras.")
