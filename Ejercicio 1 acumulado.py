@@ -8,7 +8,7 @@ num = a**2 + (b*a) ** (1/2)
 den = a%b
 c = num/den # 175.24499988374
 
-# 3. Verif condiciones
+# 3. Verif condiciones,
 entera = int(c) # 175
 #             False  and   False
 cond1 = entera%2==0  and entera<a # False
