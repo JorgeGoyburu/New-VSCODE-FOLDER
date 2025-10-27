@@ -1,33 +1,8 @@
+texto = input("Ingrese un texto: ")
 
-edad = 20
-sueldo = 400
-horas = 160
+#formato del texto : 'materia: programacion, calificacion: 90'
 
-print( 'Edad:' , edad )
-print( 'Sueldos: ', sueldo )
-print( 'Horas trabajadas al mes: ', horas )
-
-cond1 = edad > 18 # True
-
-#           T   and    T
-cond2 = edad>18 and edad<65 # True
-
-# cond2 = 18 < edad < 65
-
-#            F     or    T
-cond3 = horas>200 or sueldo<500 # True
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+materia = texto[8:texto.index(',')] # se pone la ubibacion de donde se va encontrar la materia en este caso [desde el 8vo caracter : ',']
+calificaion = float(texto[texto.index(':',8)+1 : ]) # [en este caso se busca ':' a partir del 8vo caracter mas 1 caracter despues : hasta el final de la cadena]
+porcentaje = 80
+mensaje =print(f"calificacion de {materia} es: {calificaion*porcentaje/100}")

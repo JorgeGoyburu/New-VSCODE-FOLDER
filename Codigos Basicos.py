@@ -7,7 +7,7 @@ print('la ultima letra de su nombre es:', nombre_usuario[-1]) #imprime la ultima
 
 
 #slicing
-nombre_usuario2 = 'Jorge Goyburu'
+nombre_usuario2 = input('Ingrese su nombre:')
 print(nombre_usuario2[0:-1]) #De caracter 0 hasta 1 antes del -1, osea no se imprime el ultimo caracter
 print(len(nombre_usuario2))
 print(nombre_usuario2[0:len(nombre_usuario2)]) #De caracter 0 hasta len(variable) que es el ultimo caracter
@@ -36,13 +36,18 @@ print(mensaje)
 
 
 
-cadena = "abcdefg"
+cadena = input('ingrese la palabra que quiera analizar:')
 # Comprueba si la subcadena de índice 1 a 4 ("bcd") termina con "cd"
-if cadena.endswith("cd", 0, 4): #si el rango que damos no incluye el final, no se toma en cuenta (se toma como un false)
+if cadena.endswith("cd"): #si el rango que damos no incluye el final, no se toma en cuenta (se toma como un false)
     print("La subcadena dentro del rango termina con 'cd'")
+else: 
+    print("La subcadena dentro del rango no termina con 'cd'")
 # Salida: La subcadena dentro del rango termina con 'cd'
 
-palabras = ["Hola", "123", "MUNDO"]
+palabras_usuario = input('ingrese la lista de la palbras que desea analizar(separadas por comas):')
+palabras = [palabra.strip() for palabra in palabras_usuario.split(',')]
 resultados = [palabra.isalpha() for palabra in palabras]
-print(resultados)  # Imprime: [True, False, True]
+print('resultados:')
+for palabra, resultados in zip(palabras, resultados):
+    print(f"{palabra}, {resultados}")  # Imprime: [True, False, True]
 
