@@ -6,7 +6,7 @@ def juego_pesca():
     especies = ["pez dorado", "medusa", "pulpo", "cangrejo", "pez globo",
                 "tiburón", "estrella de mar", "anguila", "calamar"]
 
-    print("\n🌊 ¡Bienvenido a la Expedición Marina! 🌊")
+    print("\n¡Bienvenido a la Expedición Marina!")
     print("Tu misión es recolectar especies marinas sin caer en las letales.")
     print("Necesitas al menos 2 especies buenas para ganar. ¡Buena suerte!\n")
 
@@ -19,10 +19,10 @@ def juego_pesca():
             probabilidad = random.random()
             if probabilidad <= 0.3:
                 buenas += 1
-                print("* Especie buena 🌱")
+                print("* Especie buena")
             else:
                 letales += 1
-                print("* Especie letal ☠️")
+                print("* Especie letal")
 
             # condición de victoria o derrota
             if buenas >= 2:
@@ -48,14 +48,14 @@ def main():
 
         print("\n" + "-" * 40)
         if resultado == "Gana!!!":
-            print(f"🎉 ¡Felicidades! Recolectaste {contador} especies buenas.")
+            print(f"¡Felicidades! Recolectaste {contador} especies buenas.")
         else:
-            print(f"💀 Recolectaste {contador} especies letales...")
+            print(f"Recolectaste {contador} especies letales...")
         print("-" * 40)
 
         continuar = input("¿Quieres intentar otra expedición? (si|no): ").lower()
 
-    print("\nGracias por jugar. 🌊 ¡Hasta la próxima aventura!")
+    print("\nGracias por jugar.  ¡Hasta la próxima aventura!")
 
 
 # Inicia el juego
