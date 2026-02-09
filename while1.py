@@ -46,7 +46,7 @@ print(porcentaje_si, procentaje_no)
 
 
 
-#Alcancia virtual
+#########    virtual     ###################
 
 chanchito = [1,5,10,10,10,25,50,50,1,10,25,50,50,50,50,25,25,10,5,5,10,50,1,5,10,10,10,25,50,50,1,10,25,50,50,50,50,25,25,10,5,5,10,50,1,5,10,10,10,25,50,50,1,10,25,50,50,50,50,25,25,10,5,5,10,50]
 
@@ -66,9 +66,9 @@ def contarDolares(lista):
     for moneda in lista:
         valor = moneda / 100
         if moneda in dolares:
-            dolares[moneda]+= valor
+            dolares[moneda]+= round(valor, 2)
         else:
-            dolares[moneda] = valor
+            dolares[moneda] = round(valor, 2)
     return dolares
 print(contarDolares(chanchito))
 
@@ -88,7 +88,7 @@ print(f"Total ahorrado en la alcancia: ${round(total, 2)}")
 
 
 
-#Cesta de compras
+##########################      Cesta de compras        ##########################
 canasta={}
 decision= input("¿Desea agregar elementos?")
 while decision.lower() == "si":
@@ -107,7 +107,78 @@ for producto, precio in canasta.items():
     print(f"{producto}\t {precio}")
     contador += float(precio)
 
-print(f"total : {contador}")
+print(f"total: {contador}")
+
+
+
+
+###########     Alcancia Virtual        ###############
+
+ahorrar = input('Cuanto desea ahorra?: ') #40
+
+while not ahorrar.isdigit():
+    print('el valor debe ser un numero')
+    ahorrar = input('Cuanto desea ahorra?: ') #40
+ahorrar = int(ahorrar)
+
+monedero = 0 #
+
+while monedero < ahorrar: #truen
+    #solicita dinero
+    pregunta = int(input('cuanto desea almacenar?: ')) #10
+    monedero += pregunta
+print(f"Objetivo conseguido haz ahorrado {monedero}")
+
+
+import random as rd
+l_premios = [ 'Carro', 'Moto', 'Laptop', 'Chocolate', 'Reloj', 'Teclado', 'Celular' ]
+vida = 2
+contador = 0
+adivinar = rd.sample(l_premios, k=3)
+
+    #condicion 1    #condicion2
+while vida >0 and contador<3:
+            #se ingresa el premio que escoja el usuario
+    texto= input(f"vidas: {vida}, ingrese un premio: ")
+    if texto in adivinar: #condicional
+        print('adivino')
+        contador += 1
+    else:
+        print('no adivino')
+        vida -= 1
+
+if contador <3: #condicion final del resultado
+    print('perdio')
+else:
+    print(f'gano {adivinar}')
+
+
+datos = {}
+Estudiante = input('Ingrese nombre del estudiante: ').title()
+while Estudiante != 'Salir':
+    if Estudiante not in datos:
+        datos[Estudiante] = 1
+    else:
+        datos[Estudiante]+= 1
+    Estudiante = input('Ingrese nombre del estudiante: ').title()
+
+nombres = list(datos.keys())
+nombres.sort()
+print (nombres)
+
+for nombre in nombres:
+    valor = datos[nombre]
+    print(f'* {nombre}: {valor}')
+
+valores = datos.values()
+promedio = (sum(valores)/len(valores))
+print('estudiante con cant de inasistencias superior al promedio: ')
+for nombre, valor in datos.items():
+    if valor > promedio:
+        print(f'*{nombre}: {valor}')
+
+
+
 
 
 

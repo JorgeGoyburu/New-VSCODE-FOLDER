@@ -60,7 +60,7 @@ def cambiar_repetidos (texto, caracter_reemplazo= '*'):
         else:
             palabra_nueva += letra
             vistas.append(letra.lower())	            
-            return palabra_nueva
+    return palabra_nueva
                     
 texto= "Ejercicios"
 texto_editado=cambiar_repetidos(texto,"-")
