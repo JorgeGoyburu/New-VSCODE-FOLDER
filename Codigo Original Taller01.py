@@ -28,6 +28,6 @@ resultado, contador = juego_pesca()
 
 print(f"Fin del juego, {contador} especies {'buenas'if resultado == 'Gana!!!' else 'letales'}, {resultado}")               
         
-
+print("tu mama")
             
         
