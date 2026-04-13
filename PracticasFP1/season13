@@ -1,0 +1,60 @@
+# Lista completa de datos
+datos_completos = [43, 46, 69, 42, 47, 48, 40, 39, 38, 35]
+
+# Tomar solo los primeros 5 días
+primeros_5_dias = datos_completos[:5]
+
+print("Lista completa:", datos_completos)
+print("Primeros 5 días a procesar:", primeros_5_dias)
+print()
+
+# Paso 1: Filtrar valores imposibles (< -50° o > 60°)
+temperaturas_validas = []
+dias_validos = []
+
+for i, temp in enumerate(primeros_5_dias, 1):
+    if -50 <= temp <= 60:
+        temperaturas_validas.append(temp)
+        dias_validos.append(i)
+
+print("Temperaturas válidas:", temperaturas_validas)
+print("Días válidos:", dias_validos)
+print()
+
+# Paso 2: Calcular temperatura promedio real
+if temperaturas_validas:
+    promedio = sum(temperaturas_validas) / len(temperaturas_validas)
+    print(f"🌡️ Temperatura promedio real: {promedio}°")
+else:
+    print("No hay temperaturas válidas para calcular el promedio")
+print()
+
+# Paso 3: Encontrar el día con cambio más brusco
+if len(temperaturas_validas) >= 2:
+    max_cambio = 0
+    dia_max_cambio = None
+    cambio_anterior = None
+    
+    for i in range(1, len(temperaturas_validas)):
+        cambio = abs(temperaturas_validas[i] - temperaturas_validas[i-1])
+        
+        if cambio > max_cambio:
+            max_cambio = cambio
+            dia_max_cambio = dias_validos[i]
+            cambio_anterior = dias_validos[i-1]
+    
+    print(f"📊 Día con cambio más brusco: Día {dia_max_cambio}")
+    print(f"   Cambio: {max_cambio}° (Día {cambio_anterior} → Día {dia_max_cambio})")
+else:
+    print("No hay suficientes datos para calcular cambios bruscos")
+print()
+
+# Paso 4: Contar días que superaron los 45°
+dias_mas_45 = sum(1 for temp in temperaturas_validas if temp > 45)
+print(f"🔥 Días que superaron los 45°: {dias_mas_45} días")
+
+# Mostrar qué días específicos superaron los 45°
+if dias_mas_45 > 0:
+    dias_lista = [f"Día {dias_validos[i]} ({temp}°)" 
+                 for i, temp in enumerate(temperaturas_validas) if temp > 45]
+    print("   Días específicos:", ", ".join(dias_lista))
