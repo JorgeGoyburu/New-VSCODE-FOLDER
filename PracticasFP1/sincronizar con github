@@ -1,6 +1,6 @@
-git add .
-git commit -m "n"
-git push origin main
+git add . # prepara los archivos modificado/nuevos
+git commit -m "n"    # Guarda una evidencia de los cambios
+git push origin main  # sube los cambios a github
 git status # esto es para verificar
 git pull
 git push
