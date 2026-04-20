@@ -8,3 +8,12 @@ for num in range(4, 0, -1):
     print()
 
 print("comprobar")
+
+
+
+
+i = 0
+while i<3:
+    i +=1
+    print(i)
+print(i)
