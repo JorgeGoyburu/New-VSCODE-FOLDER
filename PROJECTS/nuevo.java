@@ -5,10 +5,20 @@ public class nuevo {
     public static void main(String[] args) {
         System.out.println("Give a year: "); 
         try (Scanner sc = new Scanner(System.in)) {
-            int year = Integer.valueOf(sc.nextLine());
-            if (year < 2015) {
-                System.out.println("Ancient history!");
-            }   
+            short x  = (short) (100*Math.random());
+            System.out.println(x);
+            for (int i = 5; i>=0; i--) {
+                
+                System.out.print("Ingrese un numero entero del 1-100: ");
+                int adivinar = sc.nextInt();
+                if (adivinar>x) {
+                System.out.println("Su numero es mayor al numero de adivinar, le quedan " + i + " intentos.");
+                } else if (adivinar<x) {
+                System.out.println("Su numero es menor al numero de adivinar, le quedan " + i + " intentos.");
+                } else {
+                System.out.println("Usted ha adivinado el numero");
+                }
+            }
         }
         
         System.out.println("Hola Mundo");
@@ -31,7 +41,8 @@ public class nuevo {
         int divisor = 2;
         double result = dividend/(divisor*1.0);
         System.out.println(result);
-        
+        System.out.println(5%2);
 
+        
     }
 }
